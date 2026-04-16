@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MediAssist - AI Medical Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-header h1 {
+            font-size: 36px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .page-header p {
+            color: var(--text-gray);
+        }
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        .card h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card h3 {
+            margin: 20px 0 10px 0;
+            color: var(--text-dark);
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: var(--gray-bg);
+            border-radius: var(--radius-sm);
+        }
+        .feature-item i {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .tech-badge {
+            background: var(--primary-light);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            margin-top: 20px;
+            transition: var(--transition);
+        }
+        .back-btn:hover {
+            background: var(--primary-dark);
+        }
+        @media (max-width: 768px) {
+            .page-container {
+                padding: 20px;
+            }
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container" style="display: block; background: var(--light-bg); min-height: 100vh;">
+        <div class="page-container">
+            <div class="page-header">
+                <div class="logo-icon" style="margin: 0 auto 20px; width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--primary-light)); border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-heartbeat" style="font-size: 40px; color: white;"></i>
+                </div>
+                <h1>About MediAssist</h1>
+                <p>AI-Powered Medical Assistant | Llama 3 8B | Task-Oriented Medical Chatbot</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-info-circle"></i> What is MediAssist?</h2>
+                <p>MediAssist is a task-oriented medical chatbot designed to provide general health information and medical guidance. Powered by the Llama 3 8B large language model, it can understand natural language queries and generate helpful responses to common healthcare-related questions.</p>
+                <p style="margin-top: 15px;">This system was developed as part of a thesis titled <strong>"Design and Implementation of a Task-Oriented Medical Chatbot using Llama 3 8B"</strong> by Baiyifan at Wenzhou Kean University.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-star"></i> Key Features</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-stethoscope"></i>
+                        <div>
+                            <strong>Symptom Information</strong>
+                            <p style="font-size: 13px; margin-top: 5px;">Learn about common symptoms and their possible causes</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-pills"></i>
+                        <div>
+                            <strong>Medication Guidance</strong>
+                            <p style="font-size: 13px; margin-top: 5px;">General information about medications and safe usage</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <div>
+                            <strong>Healthcare Navigation</strong>
+                            <p style="font-size: 13px; margin-top: 5px;">Guidance on when to see a doctor and what to expect</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-brain"></i>
+                        <div>
+                            <strong>Natural Language Understanding</strong>
+                            <p style="font-size: 13px; margin-top: 5px;">Powered by Llama 3 8B for intelligent conversations</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-database"></i>
+                        <div>
+                            <strong>Conversation History</strong>
+                            <p style="font-size: 13px; margin-top: 5px;">All conversations are stored for continuity</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <strong>Safety First</strong>
+                            <p style="font-size: 13px; margin-top: 5px;">Emergency detection and medical disclaimers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-microchip"></i> Technology Stack</h2>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python 3.11</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">Llama 3 8B</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">SQLAlchemy</span>
+                    <span class="tech-badge">HTML5/CSS3</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">REST API</span>
+                </div>
+                <h3>System Architecture</h3>
+                <p>The chatbot follows a task-oriented dialogue design with several key components:</p>
+                <ul style="margin-top: 10px; padding-left: 20px;">
+                    <li>Natural Language Processing Module</li>
+                    <li>Llama 3 8B Language Model Integration</li>
+                    <li>Task-Oriented Dialogue Management</li>
+                    <li>MySQL Database for Conversation Storage</li>
+                    <li>Responsive Web Interface</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-chalkboard-user"></i> Research Background</h2>
+                <p>This project explores how large language models can be integrated into task-oriented medical chatbot systems to improve healthcare accessibility. The study focuses on:</p>
+                <ul style="margin-top: 15px; padding-left: 20px;">
+                    <li>Designing an effective task-oriented dialogue structure for medical conversations</li>
+                    <li>Integrating Llama 3 8B for natural language understanding and generation</li>
+                    <li>Implementing prompt engineering to ensure safe and accurate responses</li>
+                    <li>Building a complete web-based chatbot system with database integration</li>
+                </ul>
+                <p style="margin-top: 15px;">The system demonstrates the potential of LLMs in healthcare applications while maintaining safety through proper disclaimers and emergency detection.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-graduation-cap"></i> Thesis Information</h2>
+                <p><strong>Title:</strong> Design and Implementation of a Task-Oriented Medical Chatbot using Llama 3 8B</p>
+                <p><strong>Author:</strong> Baiyifan</p>
+                <p><strong>Supervisor:</strong> Rashid</p>
+                <p><strong>Department:</strong> Computer Science and Technology, Wenzhou Kean University</p>
+                <p><strong>Degree:</strong> Bachelor of Science in Computer Science</p>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="/" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Chat</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
